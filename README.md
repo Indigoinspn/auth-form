@@ -1,73 +1,213 @@
-# React + TypeScript + Vite
+# Auth Form with 2FA
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive authentication flow with email/password login and Two-Factor Authentication (2FA) code verification. Built with React, TypeScript, and React Query.
 
-Currently, two official plugins are available:
+![Demo](https://via.placeholder.com/800x400?text=Auth+Form+Demo) <!-- Замени на скриншот позже -->
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+- **Email/password login** with validation
+- **Two-Factor Authentication (2FA)** with 6-digit code input
+- **Auto-focus & auto-advance** between code fields
+- **Paste full code** support (e.g., from SMS)
+- **Countdown timer** with resend option
+- **Network error simulation** (for demo purposes)
+- **Test coverage**: unit and integration tests,
+- **CI/CD pipeline** with GitHub Actions
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠 Tech Stack
 
-## Expanding the ESLint configuration
+- **Core**: React 19, TypeScript, Vite
+- **State Management**: React Query (TanStack)
+- **Styling**: styled-components
+- **Testing**: Vitest
+- **Linting & Formatting**: ESLint, Prettier
+- **CI/CD**: GitHub Actions
+- **Deployment**: GH Pages
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Getting Started
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Prerequisites
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Node.js v20+
+- npm v10+
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone github.com/Indigoinspn/auth-form.git
+   cd auth-form
+   ```
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Open http://localhost:5173 in your browser.
+   Available Scripts:
+   npm run dev - Starts dev server
+   npm run build - Builds for production
+   npm run preview - Locally previews production build
+   npm run lint - Checks code style
+   npm run lint:fix - Fixes code style issues
+   npm run test - Runs all tests
+   npm run test:watch - Runs tests in watch mode
+
+### 🧪 Testing
+
+The project includes comprehensive tests:
+
+Unit tests for utility functions (validateEmail, validatePassword)
+Integration tests for custom hooks (useAuth, useTwoFactorManager, useCountdown)
+
+```bash
+ npm run test
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 🤖 CI/CD
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Every push to master and pull request triggers:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Code linting (ESLint)
+Code formatting check (Prettier)
+Full test suite (Vitest)
+
+### 📝 Credentials for Demo
+
+The app includes built-in mock logic to simulate various authentication scenarios.
+Use the credentials below to test all flows.
+
+**Settings**:
+
+- Duration: **30 seconds** (`TIMER_DURATION = 30`)
+- Code length: **6 digits** (`TWO_FACTOR_CODE_LENGTH = 6`)
+- Password length **8 digits** (`PASSWORD_LENGTH = 8`)
+
+## ✅ Form Validation
+
+The login form includes real-time validation with clear error messages to guide the user.
+
+### 📧 Email Field
+
+| Scenario           | Behavior                     |
+| ------------------ | ---------------------------- |
+| **Empty**          | Shows "Email is required"    |
+| **Invalid format** | Shows "Invalid email format" |
+
+> ⚠️ The email validator uses a simplified regex (`^[^\s@]+@[^\s@]+\.[^\s@]+$`) to catch common mistakes while allowing most real-world emails.
+
+---
+
+### 🔐 Password Field
+
+| Scenario                               | Behavior                                       |
+| -------------------------------------- | ---------------------------------------------- |
+| **Empty**                              | Shows "Password is required"                   |
+| **Too short** (less than 8 characters) | Shows "Password must be at least 8 characters" |
+
+> ✅ Password length is configurable via `PASSWORD_LENGTH = 8` in `src/lib/constants.ts`.
+
+![Empty Form](https://via.placeholder.com/300x500?text=Empty+Form)
+![Fields Validation](https://via.placeholder.com/300x500?text=Fields+Validation)
+
+---
+
+### 🔢 2FA Code Input
+
+- **Auto-focus**: First field receives focus on load.
+- **Auto-advance**: After entering a digit, focus moves to next field.
+- **Backspace**: Deletes current digit and moves focus to previous field.
+- **Delete**: Deletes current digit and moves focus to nex field.
+- **Paste**: Full 6-digit code can be pasted into first field → auto-fills all fields.
+- **Smart error handling**:
+- If an **invalid code** is submitted → error message appears, **Continue button is disabled**.
+- If user **starts editing** (deletes any digit) → error is **cleared automatically**,
+  **Continue button becomes enabled** (when form is filled).
+- **Exceptions**:
+  - `Code expired` → "Get new" button appears.
+  - `Network error` → Continue stays disabled until page is refreshed.
+
+> ⭐ All validation logic is implemented without external libraries — pure React + TypeScript.
+
+![2FA fields styles](https://via.placeholder.com/300x500?text=2fa+Fields+styles)
+
+---
+
+### 🔑 Valid Credentials
+
+| Field        | Value                 |
+| ------------ | --------------------- |
+| **Email**    | `valid_email@mail.ru` |
+| **Password** | `55555555`            |
+| **2FA Code** | `123456`              |
+
+✅ **Result**: Successful login → 2FA → Success page.
+
+![Valid Login](https://via.placeholder.com/300x500?text=Valid+Login)
+![Valid 2FA](https://via.placeholder.com/300x500?text=Valid+2FA)
+![Success](https://via.placeholder.com/300x500?text=Success)
+
+---
+
+### ⏳ Code Expired (2FA only)
+
+1. Enter valid credentials to reach 2FA.
+2. **Wait 30 seconds** (timer expires).
+3. Try to submit any code.
+
+❌ **Result**: "Code has expired" error. **Get new** button appears. On click resets timer.
+
+![Code Expired](https://via.placeholder.com/300x500?text=Code+Expired)
+
+---
+
+### 🌐 Network Error (Connection Lost)
+
+| Component      | Trigger                                           |
+| -------------- | ------------------------------------------------- |
+| **Login Form** | Email: `connection_lost@yahoo.com` (any password) |
+| **2FA Form**   | Code: `888888`                                    |
+
+❌ **Result**: "Network error" message.
+
+![Network Error](https://via.placeholder.com/300x500?text=Network+Error)
+
+---
+
+### 🚫 Rate Limited (Login only)
+
+| Field        | Value                    |
+| ------------ | ------------------------ |
+| **Email**    | `attempts_limited@ya.ru` |
+| **Password** | any                      |
+
+❌ **Result**: "Too many attempts. Please try again later."
+
+![Rate Limited](https://via.placeholder.com/300x500?text=Rate+Limited)
+
+---
+
+### ❌ Invalid Credentials / Code
+
+| Scenario             | Input                                    | Exceptions                                                |
+| -------------------- | ---------------------------------------- | --------------------------------------------------------- |
+| **Invalid Login**    | Any email/password **except** valid ones | email `connection_lost@yahoo.com` - connection lost error |
+|                      |                                          | email `attempts_limited@ya.ru` - attempts limited error   |
+| **Invalid 2FA Code** | Any 6-digit code **except** `123456`     | code '888888' -- connection lost error                    |
+
+❌ **Result**:
+
+- Login: "Invalid credentials"
+- 2FA: "Invalid code"
+
+![Invalid Credentials](https://via.placeholder.com/300x500?text=Invalid+Credentials)
+
+---
