@@ -115,8 +115,8 @@ The login form includes real-time validation with clear error messages to guide 
 
 > ✅ Password length is configurable via `PASSWORD_LENGTH = 8` in `src/lib/constants.ts`.
 
-![Empty Form](https://via.placeholder.com/300x500?text=Empty+Form)
-![Fields Validation](https://via.placeholder.com/300x500?text=Fields+Validation)
+![Empty Form](https://raw.githubusercontent.com/Indigoinspn/auth-form/blob/master/public/clean_forms.jpg) 
+![Fields Validation](https://raw.githubusercontent.com/Indigoinspn/auth-form/blob/master/public/login_validation.jpg) 
 
 ---
 
@@ -137,7 +137,7 @@ The login form includes real-time validation with clear error messages to guide 
 
 > ⭐ All validation logic is implemented without external libraries — pure React + TypeScript.
 
-![2FA fields styles](https://via.placeholder.com/300x500?text=2fa+Fields+styles)
+![2FA fields styles](https://raw.githubusercontent.com/Indigoinspn/auth-form/blob/master/public/code_input_styles.jpg) 
 
 ---
 
@@ -151,9 +151,9 @@ The login form includes real-time validation with clear error messages to guide 
 
 ✅ **Result**: Successful login → 2FA → Success page.
 
-![Valid Login](https://via.placeholder.com/300x500?text=Valid+Login)
-![Valid 2FA](https://via.placeholder.com/300x500?text=Valid+2FA)
-![Success](https://via.placeholder.com/300x500?text=Success)
+![Valid Login](https://raw.githubusercontent.com/Indigoinspn/auth-form/blob/master/public/succes_login.jpg) 
+![Valid 2FA](https://raw.githubusercontent.com/Indigoinspn/auth-form/blob/master/public/succes_2fa.jpg) 
+![Success](https://raw.githubusercontent.com/Indigoinspn/auth-form/blob/master/public/succes_auth.jpg) 
 
 ---
 
