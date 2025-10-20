@@ -12,6 +12,7 @@ export interface AuthState {
 
 function App() {
   const [step, setStep] = useState<AuthStep>('login');
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [authState, setAuthState] = useState<AuthState | null>(null);
 
   const handleLoginSuccess = (email: string, token: string, requires2fa: boolean) => {

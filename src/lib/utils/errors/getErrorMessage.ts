@@ -14,8 +14,6 @@ export const getErrorMessage = (error: unknown): string => {
     return ERROR_MESSAGES[code as keyof typeof ERROR_MESSAGES];
   }
 
-  console.warn('Unknown error code:', code);
-
   return ERROR_MESSAGES[ERROR_CODES.UNEXPECTED_ERROR];
 };
 

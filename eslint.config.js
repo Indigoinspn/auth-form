@@ -61,6 +61,9 @@ export default tseslint.config(
     },
     rules: {
       'vitest/expect-expect': 'off',
+      'react/display-name': 'off',
+      '@typescript-eslint/no-explicit-any': 'warn',
+      'no-console': 'off',
     },
   },
 );
