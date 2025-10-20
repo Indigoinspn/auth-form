@@ -53,7 +53,7 @@ export default tseslint.config(
       globals: {
         ...globals.browser,
         ...globals.node,
-        ...vitestPlugin.environments.vitest.globals,
+        ...globals.vitest,
       },
     },
     plugins: {
