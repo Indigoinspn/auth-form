@@ -26,7 +26,7 @@ A modern, responsive authentication flow with email/password login and Two-Facto
 - **Testing**: Vitest
 - **Linting & Formatting**: ESLint, Prettier
 - **CI/CD**: GitHub Actions
-- **Deployment**: GH Pages
+- **Deployment**: [Vercel](https://auth-form-preview.vercel.app/)
 
 ## 🚀 Getting Started
 
