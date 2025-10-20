@@ -151,11 +151,17 @@ The login form includes real-time validation with clear error messages to guide 
 
 ✅ **Result**: Successful login → 2FA → Success page.
 
-![Valid Login](./public/succes_login.jpg)
+![Valid Login]()
 ![Valid Login Loader](./public/succes_login_loader.jpg)
 ![Empty 2FA](./public/2FA_clean.jpg)
 ![Filled 2FA](./public/2FA_filled.jpg)
 ![Success](./public/succes_auth.jpg)
+
+<img src="./public/success_login.jpg" width="400" alt="Valid Credentials. Login">
+<img src="./public/success_login_loader.jpg" width="400" alt="Valid Credentials. Login Loader">
+<img src="./public/2FA_clean.jpg" width="400" alt="Empty 2FA Form">
+<img src="./public/2FA_filled.jpg" width="400" alt="Filled 2FA Form">
+<img src="./public/success_auth.jpg" width="400" alt="Success page">
 
 ---
 
