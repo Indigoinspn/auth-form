@@ -2,7 +2,10 @@
 
 A modern, responsive authentication flow with email/password login and Two-Factor Authentication (2FA) code verification. Built with React, TypeScript, and React Query.
 
-![Demo](https://via.placeholder.com/800x400?text=Auth+Form+Demo) <!-- Замени на скриншот позже -->
+
+## 🚀 DEMO
+
+👉 [https://auth-form-opal-eight.vercel.app/](https://auth-form-preview.vercel.app/)
 
 ## ✨ Features
 
