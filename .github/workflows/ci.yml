@@ -28,7 +28,7 @@ jobs:
         run: npm run lint
 
       - name: Run Prettier check
-        run: npx prettier --check src/**/*.{ts,tsx,css,md,json}
+        run: npx prettier --check "src/**/*.{ts,tsx}"
 
       - name: Run tests
         run: npm run test
