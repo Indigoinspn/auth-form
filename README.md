@@ -115,8 +115,8 @@ The login form includes real-time validation with clear error messages to guide 
 
 > ✅ Password length is configurable via `PASSWORD_LENGTH = 8` in `src/lib/constants.ts`.
 
-![Empty Form](https://raw.githubusercontent.com/Indigoinspn/auth-form/blob/master/public/clean_forms.jpg) 
-![Fields Validation](https://raw.githubusercontent.com/Indigoinspn/auth-form/blob/master/public/login_validation.jpg) 
+![Empty Form](./public/login_clean.jpg)
+![Fields Validation](./public/login_validation.jpg)
 
 ---
 
@@ -137,7 +137,8 @@ The login form includes real-time validation with clear error messages to guide 
 
 > ⭐ All validation logic is implemented without external libraries — pure React + TypeScript.
 
-![2FA fields styles](https://raw.githubusercontent.com/Indigoinspn/auth-form/blob/master/public/code_input_styles.jpg) 
+![2FA fields styles](./public/code_input_style_1.jpg)
+![2FA fields styles Error](./public/code_input_style_2.jpg)
 
 ---
 
@@ -151,9 +152,11 @@ The login form includes real-time validation with clear error messages to guide 
 
 ✅ **Result**: Successful login → 2FA → Success page.
 
-![Valid Login](https://raw.githubusercontent.com/Indigoinspn/auth-form/blob/master/public/succes_login.jpg) 
-![Valid 2FA](https://raw.githubusercontent.com/Indigoinspn/auth-form/blob/master/public/succes_2fa.jpg) 
-![Success](https://raw.githubusercontent.com/Indigoinspn/auth-form/blob/master/public/succes_auth.jpg) 
+![Valid Login](./public/succes_login.jpg)
+![Valid Login Loader](./public/succes_login_loader.jpg)
+![Empty 2FA](./public/2FA_clean.jpg)
+![Filled 2FA](./public/2FA_filled.jpg)
+![Success](./public/succes_auth.jpg)
 
 ---
 
@@ -165,7 +168,7 @@ The login form includes real-time validation with clear error messages to guide 
 
 ❌ **Result**: "Code has expired" error → **Get new** button appears → On click resets timer.
 
-![Code Expired](https://via.placeholder.com/300x500?text=Code+Expired)
+![Code Expired](./public/code_expired_2fa.jpg)
 
 ---
 
@@ -178,7 +181,8 @@ The login form includes real-time validation with clear error messages to guide 
 
 ❌ **Result**: "Network error" message.
 
-![Network Error](https://via.placeholder.com/300x500?text=Network+Error)
+![Network Login](./public/connection_lost_login.jpg)
+![Network 2FA](./public/connection_lost_2fa.jpg)
 
 ---
 
@@ -191,7 +195,7 @@ The login form includes real-time validation with clear error messages to guide 
 
 ❌ **Result**: "Too many attempts. Please try again later."
 
-![Rate Limited](https://via.placeholder.com/300x500?text=Rate+Limited)
+![Rate Limited](./public/rate_limited.jpg)
 
 ---
 
@@ -207,7 +211,8 @@ The login form includes real-time validation with clear error messages to guide 
 
 - Login: "Invalid credentials"
 - 2FA: "Invalid code"
-
-![Invalid Credentials](https://via.placeholder.com/300x500?text=Invalid+Credentials)
+- 
+![Invalid Login](./public/invalid_login.jpg)
+![Invalid 2FA](./public/invalid_2fa.jpg)
 
 ---
