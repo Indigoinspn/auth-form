@@ -76,9 +76,9 @@ Integration tests for custom hooks (useAuth, useTwoFactorManager, useCountdown)
 
 Every push to master and pull request triggers:
 
-Code linting (ESLint)
-Code formatting check (Prettier)
-Full test suite (Vitest)
+- Code linting (ESLint)
+- Code formatting check (Prettier)
+- Full test suite (Vitest)
 
 ### 📝 Credentials for Demo
 
@@ -163,7 +163,7 @@ The login form includes real-time validation with clear error messages to guide 
 2. **Wait 30 seconds** (timer expires).
 3. Try to submit any code.
 
-❌ **Result**: "Code has expired" error. **Get new** button appears. On click resets timer.
+❌ **Result**: "Code has expired" error → **Get new** button appears → On click resets timer.
 
 ![Code Expired](https://via.placeholder.com/300x500?text=Code+Expired)
 
