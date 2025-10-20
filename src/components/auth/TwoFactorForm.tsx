@@ -25,6 +25,14 @@ export const TwoFactorForm: FC<TwoFactorFormProps> = ({ onVerifySuccess, onBack 
 
   const showGetNewButton = isCodeExpired;
 
+  const onInputChange = (value: string[]) => {
+    setCodeInput(value);
+
+    if (!isCodeExpired && !isNetworkError) {
+      resetValidation();
+    }
+  };
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     resetValidation();
@@ -59,7 +67,7 @@ export const TwoFactorForm: FC<TwoFactorFormProps> = ({ onVerifySuccess, onBack 
 
         <Timer timeLeft={timeLeft} />
 
-        <CodeFields value={codeInput} onChange={setCodeInput} isError={isError} disabled={isLoading} />
+        <CodeFields value={codeInput} onChange={onInputChange} isError={isError} disabled={isLoading} />
 
         {isError && (
           <Message $variant="error" role="alert" $marginBottom $alignCenter>
@@ -72,7 +80,7 @@ export const TwoFactorForm: FC<TwoFactorFormProps> = ({ onVerifySuccess, onBack 
             Get new
           </Button>
         ) : (
-          <Button type="submit" isLoading={isLoading} disabled={!isFormFilled || isNetworkError}>
+          <Button type="submit" isLoading={isLoading} disabled={!isFormFilled || isError}>
             Continue
           </Button>
         )}

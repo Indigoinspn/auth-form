@@ -59,10 +59,8 @@ export const CodeFields: FC<CodeFieldsProps> = ({ value, onChange, isError = fal
   };
 
   useEffect(() => {
-    if (!disabled && !isError) {
-      inputsRef.current[0]?.focus();
-    }
-  }, [disabled, isError]);
+    inputsRef.current[0]?.focus();
+  }, []);
 
   return (
     <CodeInputContainer>

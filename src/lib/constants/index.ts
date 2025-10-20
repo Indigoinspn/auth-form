@@ -8,7 +8,8 @@ export const SUCCESS_AUTH_TITLE = 'You have been successfully authenticated';
 export const TWO_FACTOR_CODE_LENGTH = 6;
 export const PASSWORD_LENGTH = 8;
 export const TIMER_DURATION = 30;
-export const DELAY_DURATION = 1100;
+export const DELAY_DURATION = 800;
+export const EMAIL_VALIDATION_REGEXP = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 // Credentials
 export const CORRECT_CODE = '123456';
