@@ -115,8 +115,8 @@ The login form includes real-time validation with clear error messages to guide 
 
 > ✅ Password length is configurable via `PASSWORD_LENGTH = 8` in `src/lib/constants.ts`.
 
-![Empty Form](./public/login_clean.jpg)
-![Fields Validation](./public/login_validation.jpg)
+<img src="./public/login_clean.jpg" width="400" alt="Empty Form">
+<img src="./public/login_validation.jpg" width="400" alt="Fields Validation">
 
 ---
 
@@ -137,9 +137,8 @@ The login form includes real-time validation with clear error messages to guide 
 
 > ⭐ All validation logic is implemented without external libraries — pure React + TypeScript.
 
-![2FA fields styles](./public/code_input_style_1.jpg)
-![2FA fields styles Error](./public/code_input_style_2.jpg)
-
+<img src="./public/code_input_style_1.jpg" width="400" alt="2FA fields styles">
+<img src="./public/code_input_style_2.jpg" width="400" alt="2FA fields error styles ">
 ---
 
 ### 🔑 Valid Credentials
@@ -168,7 +167,7 @@ The login form includes real-time validation with clear error messages to guide 
 
 ❌ **Result**: "Code has expired" error → **Get new** button appears → On click resets timer.
 
-![Code Expired](./public/code_expired_2fa.jpg)
+<img src="./public/code_expired_2fa.jpg" width="400" alt="2FA Code Expired">
 
 ---
 
@@ -181,8 +180,8 @@ The login form includes real-time validation with clear error messages to guide 
 
 ❌ **Result**: "Network error" message.
 
-![Network Login](./public/connection_lost_login.jpg)
-![Network 2FA](./public/connection_lost_2fa.jpg)
+<img src="./public/connection_lost_login.jpg" width="400" alt="Network Error. Login">
+<img src="./public/connection_lost_2fa.jpg" width="400" alt="Network Error. 2FA">
 
 ---
 
@@ -195,7 +194,7 @@ The login form includes real-time validation with clear error messages to guide 
 
 ❌ **Result**: "Too many attempts. Please try again later."
 
-![Rate Limited](./public/rate_limited.jpg)
+<img src="./public/rate_limited.jpg" width="400" alt="Rate Limited Error. Login">
 
 ---
 
@@ -211,8 +210,8 @@ The login form includes real-time validation with clear error messages to guide 
 
 - Login: "Invalid credentials"
 - 2FA: "Invalid code"
-- 
-![Invalid Login](./public/invalid_login.jpg)
-![Invalid 2FA](./public/invalid_2fa.jpg)
+
+<img src="./public/invalid_login.jpg" width="400" alt="Invalid Login">
+<img src="./public/invalid_2fa.jpg" width="400" alt="Invalid 2FA Code">
 
 ---
