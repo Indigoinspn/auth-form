@@ -4,10 +4,11 @@ import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import tseslint from 'typescript-eslint';
+import vitestPlugin from 'eslint-plugin-vitest';
 
 export default tseslint.config(
   {
-    ignores: ['dist/', 'node_modules/'],
+    ignores: ['dist/', 'node_modules/', 'coverage/'],
   },
   {
     files: ['src/**/*.{ts,tsx}'],
@@ -28,7 +29,7 @@ export default tseslint.config(
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
       '@typescript-eslint': tseslint.plugin,
-      vitest,
+      vitest: vitestPlugin,
     },
     settings: {
       react: { version: 'detect' },
@@ -44,6 +45,22 @@ export default tseslint.config(
       'react/react-in-jsx-scope': 'off',
       'react/prop-types': 'off',
       'no-console': 'warn',
+    },
+  },
+  {
+    files: ['src/**/*.{test,spec}.{ts,tsx}'],
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+        ...vitestPlugin.environments.vitest.globals,
+      },
+    },
+    plugins: {
+      vitest: vitestPlugin,
+    },
+    rules: {
+      'vitest/expect-expect': 'off',
     },
   },
 );
